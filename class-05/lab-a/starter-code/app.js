@@ -83,7 +83,12 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-    
+    var num1 = sumArr[0];
+    var num2 = sumArr[1];
+    var num3 = sumArr[2];
+    var mySum = sum(num1, num2)[0];
+    var allSum = sum(mySum, num3)[0];
+    return [allSum, num1 + "," + num2 + "," + num3 + " was passed in as an array of numbers, and " + allSum +" is their sum."];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -104,11 +109,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var num1 = multArr[0];
+    var num2 = multArr[1];
+    var num3 = multArr[2];
+    var myMult = multiply(num1, num2)[0];
+    var allMult = multiply(myMult, num3)[0];
+    var totalMult = 'The numbers ' + num1 + "," + num2 + "," + num3 + " have a product of " + allMult + ".";
+    return [allMult, totalMult]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -132,7 +143,6 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
