@@ -54,13 +54,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var add = a + b + c;
-    var times = a * b * c;
-    console.log(add);
-    console.log(times);
-    var totaladd = a + " and " + b + " and " + c + " sum to " + add + ".";
-    var totaltimes = "The product of " + a + " and " + b + " and " + c + " is " + times + ".";
-    return [add, times, totaladd, totaltimes]
+    var totalSum = sum(a, b)[0]; //returns array. sum is [0], string is [1]
+    var totalMultiply = multiply(a, b)[0];
+    // totalSum = sum(totalSum, c)[0]; total sum = function "sum" plus a third argument/parameter "c"
+    totalSum = sum(totalSum, c)[0];
+    totalMultiply = multiply(totalMultiply, c)[0];
+    var totaladd = a + " and " + b + " and " + c + " sum to " + totalSum + ".";
+    var totaltimes = "The product of " + a + " and " + b + " and " + c + " is " + totalMultiply + ".";
+    return [totalSum, totalMultiply, totaladd, totaltimes];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -82,12 +83,12 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
