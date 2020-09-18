@@ -32,8 +32,10 @@ populateForm();
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
 
+
+
   // TODO: Prevent the page from reloading
-  event.preventDefault();
+  event.preventDefault(); // keeping things from reloading
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -43,11 +45,32 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
+
+var currentCart = [];
+
 function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
-  var suss = Product.allProducts[i];
+
+  var name = event.target[1].value;
+
+
   // TODO: get the quantity
+
+  var quantity = parseInt(event.target.quantity.value);
+
+  // console.log(event.target[1].value, event.target.quantity.value); // console logged product and value to see what we are selecting and the number 
+
   // TODO: using those, add one item to the Cart
+
+  var form = document.getElementById('catalog');
+
+  var newItem = new Cart(name, quantity);
+  currentCart.push(newItem);
+  // console.log(newItem);
+  form.reset();
+  // cart has value and name
+  console.log(currentCart);
+
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
